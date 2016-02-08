@@ -1,3 +1,3 @@
-Hermione $ Granger $ Q $ Hogwarts $ 5/2/1986 $ Maroon
-Draco $ Malfoy $ P $ Slytherin $ 1/15/1987 $ Green
-Luna $ Lovegood $ L $ Ravenclaw $ 8/15/1986 $ Gold
+Granger $ Hermione $ Q $ Hogwarts $ 5/2/1986 $ Maroon
+Malfoy $ Draco $ P $ Slytherin $ 1/15/1987 $ Green
+Lovegood $ Luna $ L $ Ravenclaw $ 8/15/1986 $ Gold

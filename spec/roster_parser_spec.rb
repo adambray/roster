@@ -12,7 +12,7 @@ RSpec.describe RosterParser do
       }
     },
     dollar: {
-      headers: [:first_name, :last_name, :middle_initial, :campus,
+      headers: [:last_name, :first_name, :middle_initial, :campus,
                 :date_of_birth, :favorite_color],
       delimiter: "$",
       sample_row: {
@@ -21,7 +21,7 @@ RSpec.describe RosterParser do
       }
     },
     pipe: {
-      headers: [:first_name, :last_name, :middle_initial, :campus,
+      headers: [:last_name, :first_name, :middle_initial, :campus,
                 :favorite_color, :date_of_birth],
       delimiter: "|",
       sample_row: {
@@ -32,9 +32,10 @@ RSpec.describe RosterParser do
   }
 
   context "reading a well-formatted file" do
+    # Runs the same tests for each format, using the data
+    # defined above.
     formats.each do |format, info|
       context "as #{format}" do
-
         let(:results) { RosterParser.parse("spec/test_data/good_#{format}.txt",
                               info[:headers], info[:delimiter]) }
 
@@ -47,6 +48,8 @@ RSpec.describe RosterParser do
         end
 
         it "returns an array of hashes" do
+          # Ensures all rows are hashes, not just the first,
+          # last, etc
           expect(results.map(&:class).uniq).to eq([Hash])
         end
 
@@ -66,7 +69,7 @@ RSpec.describe RosterParser do
     let(:results) { RosterParser.parse("spec/test_data/bad.txt",
                       formats[:csv][:headers], ",") }
 
-    it "should raise an exception"  do
+    it "should raise an exception if rows don't match columns"  do
       expect {results }.to raise_error(RosterParser::Errors::FileFormat)
     end
   end
