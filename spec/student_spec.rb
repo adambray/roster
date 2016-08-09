@@ -33,6 +33,34 @@ RSpec.describe Student do
     expect(draco.date_of_birth).to eq(Date.new(1987, 1, 15))
   end
 
+  it "has a next upcoming birthday" do
+    # make a date 1 day in the future
+    year = Date.today.year - 15
+    month = Date.today.month
+    day = Date.today.day + 1
+    date_string = Date.new(year, month, day).strftime("%m-%d-%Y")
+
+    new_info = info.merge({date_of_birth: date_string })
+    draco = Student.new(new_info)
+
+    current_year = Date.today.year
+    expect(draco.upcoming_birthday).to eq(Date.new(current_year, month, day))
+  end
+
+  it "returns the next birthday if the birthday has happened this year" do
+    # make a date 1 day in the past
+    year = Date.today.year - 15
+    month = Date.today.month
+    day = Date.today.day - 1
+    date_string = Date.new(year, month, day).strftime("%m-%d-%Y")
+
+    new_info = info.merge({date_of_birth: date_string })
+    draco = Student.new(new_info)
+
+    next_year = Date.today.year + 1
+    expect(draco.upcoming_birthday).to eq(Date.new(next_year, month, day))
+  end
+
   it "can be created with a date of birth formatted MM-DD-YYYY" do
     new_info = info.merge({date_of_birth: "1-15-1987"})
     draco = Student.new(new_info)

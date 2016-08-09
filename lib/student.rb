@@ -1,5 +1,5 @@
 class Student
-  ATTRS = [:first_name, :last_name, :campus, :favorite_color, :date_of_birth]
+  ATTRS = [:first_name, :last_name, :campus, :favorite_color, :date_of_birth].freeze
   attr_reader *ATTRS
 
   def initialize(info = {})
@@ -13,6 +13,20 @@ class Student
   def info_string
     formatted_date_of_birth = date_of_birth.strftime("%-m/%-d/%Y")
     "#{last_name} #{first_name} #{campus} #{formatted_date_of_birth} #{favorite_color}"
+  end
+
+  def upcoming_birthday
+    day = date_of_birth.day
+    month = date_of_birth.month
+
+    today = Date.today
+    birthday_this_year = Date.new(today.year, month, day)
+
+    if birthday_this_year < today
+      return Date.new(today.year + 1, month, day)
+    else
+      return Date.new(today.year, month, day)
+    end
   end
 
   private

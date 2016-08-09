@@ -28,3 +28,6 @@ puts roster.students(date_of_birth: :asc).map(&:info_string).join("\n")
 puts
 puts "Output 3:"
 puts roster.students(last_name: :desc).map(&:info_string).join("\n")
+puts
+puts "Output 4:"
+puts roster.students.sort_by(&:upcoming_birthday).map(&:info_string).join("\n")
