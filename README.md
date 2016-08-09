@@ -1,6 +1,3 @@
-# <img src='https://cloud.githubusercontent.com/assets/544541/4461515/092962a4-48bb-11e4-8e4c-88bee6e5a321.jpg' width=50> Engineering Code Challenge
-
-To help us get a clearer picture of your skills as a developer, we kindly request you take our code challenge. We encourage you to limit yourself to **4 to 5 hours'** worth of effort.
 
 ## Requirements
 
