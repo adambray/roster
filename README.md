@@ -1,4 +1,3 @@
-
 ## Requirements
 
 * Please write a Ruby program that:
@@ -7,20 +6,6 @@
   * Displays the collection 3 times, sorted 3 different ways
 
 * Besides a testing framework ([RSpec](https://github.com/rspec/rspec), [test-unit](https://github.com/test-unit/test-unit), or [minitest](https://github.com/seattlerb/minitest)), please only use Ruby and [its standard library](http://www.ruby-doc.org/stdlib/) (i.e. no other gems)
-
-* Please use the latest stable version of Ruby MRI
-
-* What we're looking for here is clear code and elegant object-oriented design. Please avoid imperative or functional coding style, or an overly clever solution.
-
-* When finished, please package and submit your solution as an email attachment. (Please do **not** publish your code anywhere!) Send the email to code-challenge@generalassemb.ly with instructions on how to run your program
-
-## Criteria
-
-The qualities we're looking for are:
-
-  * **Clarity**: is the intent of the code obvious? Are things named appropriately?
-  * **Maintainability:**: how flexible is the code?
-  * **Testability**: is it easy to test the code? _Please demonstrate with unit tests._
 
 ## Input
 
